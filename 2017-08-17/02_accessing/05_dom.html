@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<title>DOM nodes</title>
+</head>
+<body>
+<div id="root"><p>JavaScript Application Development</p><!--are we having fun yet?--></div>
+<script>
+var root = document.getElementById('root');
+/*
+var node = root;
+*/
+/*
+var node = root.childNodes[0];
+*/
+/*
+var node = root.childNodes[0].childNodes[0];
+*/
+/*
+var node = root.childNodes[1];
+*/
+/*
+var node = document;
+*/
+
+if (node.nodeType === 1) {
+  console.log('element: ' + node.nodeName);
+} else if (node.nodeType === 3) {
+  console.log('text: ' + node.data);
+} else if (node.nodeType === 8) {
+  console.log('comment: ' + node.data);
+} else {
+  console.log('unexpected ' + node.nodeType);
+}
+
+console.log(node);
+</script>
+</body>
+</html>
