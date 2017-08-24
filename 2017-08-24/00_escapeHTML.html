@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<title>escapeHTML</title>
+</head>
+<body>
+<div id="root"></div>
+<script>
+// Given a string, return “escaped” string that is safe to include in HTML.
+// Uses regular expressions, which are outside the scope of this course.
+function escapeHTML(string) {
+  return string.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+var root = document.getElementById('root');
+
+var untrusted = 'I am not <img src="nowhere" onerror="alert(\'gotcha\')"> nice.';
+
+var escaped = document.createElement('p');
+escaped.innerHTML = escapeHTML(untrusted);
+root.appendChild(escaped);
+
+var unescaped = document.createElement('p');
+unescaped.innerHTML = untrusted;
+root.appendChild(unescaped);
+</script>
+</body>
+</html>
