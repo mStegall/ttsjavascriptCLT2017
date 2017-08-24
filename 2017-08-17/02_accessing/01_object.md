@@ -29,6 +29,8 @@ Refer to property by either:
 * **bracket** notation, especially if the key is the **value** of a variable
 
     ```js
+    var friends = ['id2', 'id3'];
+    var persons = {id1: { }, id2: { }, id3: { }}
     var person = persons[id]; // person becomes value of property whose key is id
     ```
 

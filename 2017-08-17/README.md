@@ -190,11 +190,11 @@ var root = {
           nodeType: 3,
           data: 'JavaScript Application Development',
         },
-        {
-          nodeType: 8,
-          data: 'are we having fun yet?',
-        },
       ],
+    },
+    {
+      nodeType: 8,
+      data: 'are we having fun yet?',
     },
   ],
 }
