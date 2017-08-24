@@ -1,6 +1,6 @@
-function add(a,b) {
+function logArgs(a,b) {
 	console.log(a,b)
 }
 
-add(1); // '1,undefined'
-add(1,2,3,4,5) // '1,2'
+logArgs(1); // '1,undefined'
+logArgs(1,2,3,4,5) // '1,2'

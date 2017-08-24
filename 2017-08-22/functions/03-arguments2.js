@@ -1,5 +1,5 @@
-function add() {
+function logArgs() {
 	 console.log(arguments);
 }
 	
-add(1,2,3,4,5,6,7,8);
+logArgs(1,2,3,4,5,6,7,8,5,6,7,8,5,6,7,8,5,6,7,8,5,6,7,8);
