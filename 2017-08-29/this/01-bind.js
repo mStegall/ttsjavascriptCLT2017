@@ -1,13 +1,11 @@
 var teacher = {
 	name: 'Shane',
-	speak: function() {
-
-		function unboundFunction(){
+	unboundFunction: function (){
 			console.log('later my name is ' + this.name);
-		}
-		
+		},
+	speak: function() {
 		//Bind a function to a specific context
-		var boundFunction = unboundFunction.bind(this);
+		var boundFunction = this.unboundFunction.bind(this);
 		
 		//boundFunction will always run in bound context
 		setTimeout(boundFunction,1000);

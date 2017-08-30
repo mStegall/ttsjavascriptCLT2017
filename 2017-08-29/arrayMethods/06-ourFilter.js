@@ -26,6 +26,21 @@ const cities = [
     },
 ]
 
-console.log(cities.reduce(function(acc, item){
-    return acc + item.population 
-}, 0))
+function filter(fn, array){
+    var result = [];
+
+    for(var i = 0; i < array.length; i +=1){
+        var item = array[i];
+        if(fn(item)){
+            result.push(item)
+        }
+    }
+
+    return result;
+}
+
+function isNc (item){
+    return item.state === "NC"
+}
+
+console.log(filter(isNc, cities) )

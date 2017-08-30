@@ -1,4 +1,4 @@
-const Brad = {
+var Brad = {
     name: "Brad",
     sayName: function(){
         console.log(this.name);
