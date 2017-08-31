@@ -1,4 +1,4 @@
-# Lesson 6: Developing event-oriented applications
+# Lesson 6: Object-oriented JavaScript
 
 **Learning objective**: Read and write fluent JavaScript in which **objects** and **functions** work well together.
 
@@ -13,6 +13,20 @@ Examples:
 
 Comparison:
 
+* A **function** can make all inputs **explicit** as arguments:
+
+  ```js
+  function addItem(items, item) {
+    items.push(item);
+  }
+
+  var items = [];
+  addItem(items, {
+    text: 'Develop event-oriented applications',
+    completed: false,
+  });
+  ```
+
 * An **object** can **encapsulate** data together with relevant methods:
 
   ```js
@@ -25,20 +39,6 @@ Comparison:
 
   // The todoList object “knows” how to update itself.
   todoList.addItem({
-    text: 'Develop event-oriented applications',
-    completed: false,
-  });
-  ```
-
-* A **function** can make all inputs **explicit** as arguments:
-
-  ```js
-  function addItem(items, item) {
-    items.push(item);
-  }
-
-  var items = [];
-  addItem(items, {
     text: 'Develop event-oriented applications',
     completed: false,
   });
