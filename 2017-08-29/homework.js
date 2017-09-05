@@ -6,7 +6,7 @@ const Brad = {
         console.log(this.name);
     },
     sayMyNameDelay: function(){
-        setTimeout(this.sayName, 1000)
+        setTimeout(this.sayName.bind(this), 1000)
     }
 }
 
