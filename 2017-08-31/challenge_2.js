@@ -1,11 +1,11 @@
-function Element(nodeName, attributes, childNodes) {
+function Element(nodeName, attributes) {
   /* This is where you adapt what you wrote in preceding challenge */
 }
 
-var element = getElement(
+var element = new Element(
   'p',
   [{name: 'id', value: 'challenge-2'}],
-  ['Write constructor function']
+  'Write constructor function'
 );
 
 console.log(JSON.stringify(element));
@@ -16,8 +16,8 @@ console.log(JSON.stringify(element));
    sets data property of instance from argument
    always sets nodeType property whose value is 3
 
- * Replace ['Write constructor function']
-   with [new Text('Write constructor function')]
+ * Replace 'Write constructor function'
+   with new Text('Write constructor function')
 
  * Write a constructor function Comment(data) which:
    sets data property of instance from arguments
