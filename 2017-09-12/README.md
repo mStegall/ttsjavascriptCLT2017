@@ -22,8 +22,8 @@ The `jQuery` or `$` function is a virtual constructor. The **type** of argument 
 
 It always returns an [array-like object](https://learn.jquery.com/using-jquery-core/jquery-object/) that **wraps** a collection of DOM elements:
 
-* It has `length` property.
-* It refers to items by non-negative integer index
+* It has `length` property
+* It refers to items by integer index
 * To use array methods, remember the `call` method with jQuery object as **context** argument and **callback** function as second argument
 * Unlike `HTMLCollection` and like `NodeList`, it doesn’t update automatically when content of the document changes
 * Unlike `HTMLCollection` or `NodeList`, it has an intuitive [API](http://api.jquery.com/) with many methods:
