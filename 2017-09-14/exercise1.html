@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    .buttons{
+        border: 2px solid black;
+        padding: 5px;
+    }
+    #content{
+        border: 2px solid blue;
+        padding: 5px;
+    }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            var container = $('#content')
+
+            function clearContainer(){
+                container.html("")
+            }
+            
+            function getPosts() {
+                clearContainer();
+                //Make a GET request for the items to render
+                $.get('http://jsonplaceholder.typicode.com/posts', function (posts) {
+                    // Create a new unorderd list
+                    var list = $('<ul></ul>');
+                    //Iterate over the response, adding elements to DOM
+                    posts.forEach(function (post) {
+                        var li = $('<li></li>');
+                        li.text(post.title);
+                        list.append(li);
+                    })
+                    container.append(list)
+                })
+            }
+
+            $('#loadPosts').click(getPosts)
+        })
+    </script>
+</head>
+
+<body>
+    <h1>API Playground</h1>
+    <div class="buttons">
+        <button id="loadPosts">Load Posts</button>
+    </div>
+    <div id="content"></div>
+</body>
+
+</html>
