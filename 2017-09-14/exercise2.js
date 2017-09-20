@@ -4,27 +4,38 @@ $(document).ready(function () {
         container.html("")
     }
 
-    function homeScreen() {
+    function homeScreen(error) {
         clearContainer();
+
 
         var input = $('<input type="text" />')
         var button = $('<button>Search</search>')
 
-        button.click(function() {
-           userScreen(input.val())
+        button.click(function () {
+            getUserInfo(input.val())
+                .then(function(response){
+                    userScreen.apply(null, response)
+                })
         })
+
+        if (error){
+            // Render your error
+        }
 
         container.append(input);
         container.append(button);
     }
 
-    function userScreen(user) {
+    function userScreen(userInfo, postData, albumData) {
         clearContainer();
+        console.log("User info: ", JSON.stringify(userInfo))
+        console.log("Post data: ", JSON.stringify(postData))
+        console.log("Album data: ", JSON.stringify(albumData))
 
-        var userName = $('<h1></h1>')
-        userName.text(user)
+        // var userName = $('<h1></h1>')
+        // userName.text(user)
 
-        container.append(userName)
+        // container.append(userName)
     }
 
     function postScreen() {
@@ -35,6 +46,36 @@ $(document).ready(function () {
 
     }
 
+    function myFetch(url) {
+        return fetch(url)
+            .then(function fetchCheck(response) {
+                if (response.status >= 400) throw new Error()
+
+                return response
+            })
+            .then(function (response) { return response.json() })
+    }
+
+    function getUserInfo(name) {
+        clearContainer();
+        //Make a GET request for the items to render
+        return myFetch('http://jsonplaceholder.typicode.com/users?username=' + name)
+            .then(function (users) {
+                // Create a new unorderd list
+                var user = users[0];
+                var userId = user.id;
+                if(!user){
+                    // What do we do if there is not a user?
+
+                }
+
+                var getUserPosts = myFetch('http://jsonplaceholder.typicode.com/posts?userId=' + userId);
+
+                var getUserAlbums = myFetch('http://jsonplaceholder.typicode.com/albums?userId=' + userId);
+
+                return Promise.all([user, getUserPosts, getUserAlbums]);
+            })
+    }
 
     function getPosts() {
         clearContainer();
