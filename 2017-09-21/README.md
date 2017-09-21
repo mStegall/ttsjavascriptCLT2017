@@ -22,10 +22,10 @@ In the `2017-09-19/testing-with-jest` directory, do either of the following:
 
 ## ESLint
 
-[Integrations: Editors](http://eslint.org/docs/user-guide/integrations#editors)
-[Getting Started with ESLint](http://eslint.org/docs/user-guide/getting-started)
-[Configuring ESLint](http://eslint.org/docs/user-guide/configuring)
-[Rules](http://eslint.org/docs/rules/)
+* [Integrations: Editors](http://eslint.org/docs/user-guide/integrations#editors)
+* [Getting Started with ESLint](http://eslint.org/docs/user-guide/getting-started)
+* [Configuring ESLint](http://eslint.org/docs/user-guide/configuring)
+* [Rules](http://eslint.org/docs/rules/)
 
 In `package.json` see the `eslintConfig` property:
 
@@ -54,6 +54,11 @@ In addition to editor integration, see the `scripts` property in `package.json`
   * To run lint at any time: `npm run lint`
 
 ## webpack
+
+Main idea:
+
+* **Bundle files** to reduce separate downloads: `script` or `link` or `@import`
+* Follow `require` from the **top down** instead of files from the bottom up
 
 [Webpack from First Principles](https://youtu.be/WQue1AN93YU)
 
