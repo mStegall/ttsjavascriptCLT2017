@@ -16,10 +16,19 @@ $(document).ready(function () {
                 .then(function(response){
                     userScreen.apply(null, response)
                 })
+                .catch(err => {
+                    if(err.message === "NOUSER"){
+                        return homeScreen("<script>alert('hey you screwed up')</script>")
+                    }
+
+                    alert(err);
+                })
         })
 
         if (error){
             // Render your error
+            const errorMessage = $(`<div>${error}</div>`)
+            container.append(errorMessage)
         }
 
         container.append(input);
@@ -63,11 +72,11 @@ $(document).ready(function () {
             .then(function (users) {
                 // Create a new unorderd list
                 var user = users[0];
-                var userId = user.id;
                 if(!user){
                     // What do we do if there is not a user?
-
+                    throw new Error("NOUSER")
                 }
+                var userId = user.id;
 
                 var getUserPosts = myFetch('http://jsonplaceholder.typicode.com/posts?userId=' + userId);
 
