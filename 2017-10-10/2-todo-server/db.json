@@ -1,0 +1,29 @@
+{
+  "todos": [
+    {
+      "id": 0,
+      "text": "Start timers or make API requests in componentDidMount",
+      "completed": true
+    },
+    {
+      "id": 1,
+      "text": "Stop timers in componentWillUnmount",
+      "completed": true
+    },
+    {
+      "id": 2,
+      "text": "If new props affect current state, you might rewrite to “lift state up”",
+      "completed": false
+    },
+    {
+      "id": 3,
+      "text": "Accept default behaviors unless you verify that they cause problems",
+      "completed": false
+    },
+    {
+      "id": 4,
+      "text": "Catch JavaScript errors in a rendered subtree of React elements",
+      "completed": false
+    }
+  ]
+}
