@@ -1,0 +1,19 @@
+{
+  "todos": [
+    {
+      "id": 0,
+      "text": "Describe application state as plain objects and arrays",
+      "completed": true
+    },
+    {
+      "id": 1,
+      "text": "Describe changes in the system as plain objects",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "text": "Describe the logic for handling changes as pure functions",
+      "completed": false
+    }
+  ]
+}
